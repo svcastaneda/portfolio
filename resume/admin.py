@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Accomplishment
+from .models import School, Skill, Experience, Accomplishment, Activity, Project
 
 # Register your models here.
 
-admin.site.register(Accomplishment)
+admin.site.register([School, Skill, Experience, Accomplishment, Activity, Project])

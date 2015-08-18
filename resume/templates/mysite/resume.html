@@ -1,0 +1,87 @@
+{% extends "mysite/base.html" %}
+
+{% block title %}Resume{% endblock %}
+{% block heading %}Resume{% endblock %}
+
+{% block content %}
+
+	<h3><u>Education</u></h3>
+	<table id='education'>
+		{% for school in schools %}
+			<tr>
+				<td>{{ school.name }}</td>
+				<td style='text-align:right'>{{ school.location }}</td>
+			</tr>
+			{% if school.note %}
+			<tr>
+				<td><i>{{ school.note }}</i></td>
+			</tr>
+			{% endif %}
+			<tr>
+				<td><ul>
+					<li>Major: {{ school.major }} </li>
+					{% if school.concentration %}
+						<li>Concentration: {{ school.concentration }}</li>
+					{% endif %}
+					<li>Graduation: {{ school.graduation }}</li>
+					<li>GPA: {{ school.gpa }}</li>
+				</ul></td>
+			</tr>
+		{% endfor %}
+		
+	</table>
+		
+		
+	<h3><u>Skills</u></h3>
+	<table>
+		<tr>
+			<td><ul>
+				{% for skill in skills_1 %}
+					<li>{{ skill }}</li>
+				{% endfor %}
+			</ul></td>
+			<td><ul>
+				{% for skill in skills_2 %}
+					<li>{{ skill }}</li>
+				{% endfor %}
+			</ul></td>
+		</tr>
+	</table>
+
+
+	<h3><u>Experience</u></h3>
+	<!-- newest to oldest or oldest to newest? -->
+	<table>
+		{% for xp in experiences %}
+			<tr>
+				<td>{{ xp.company }} - {{ xp.location }}</td>
+				<td style='text-align:right;'>({{ xp.duration }})</td>
+			</tr>
+			<tr><td><i>{{ xp.role }}<i></td></tr>
+			<tr>
+				<td colspan='2'>
+					<ul><li>{{ xp.description|linebreaks }}</li></ul>
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+	
+	
+	<h3><u>Accomplishments</u></h3>
+	<ul>
+		{% for thing in accomplishments %}
+			<li>{{ thing }}</li>
+		{% endfor %}
+	</ul>
+	
+	<br>
+	
+	<h3><u>Extra-Curricular Activities</u></h3>
+	<ul>
+		{% for activity in activities %}
+			<li>{{ activity.name }} [{{ activity.duration }}]</li>
+		{% endfor %}
+	</ul>
+	
+
+{% endblock %}
