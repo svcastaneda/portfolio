@@ -5,4 +5,4 @@ from .models import Accomplishment
 
 def accomplishment_list(request):
     accomplishments = Accomplishment.objects.all()
-    return render(request, 'resume/accomplishment_list.html', {})
+    return render(request, 'resume/accomplishment_list.html', {'accomplishments': accomplishments})
