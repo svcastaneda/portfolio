@@ -9,7 +9,7 @@
 	<table id='education'>
 		{% for school in schools %}
 			<tr>
-				<td>{{ school.name }}</td>
+				<td><b>{{ school.name }}</b></td>
 				<td style='text-align:right'>{{ school.location }}</td>
 			</tr>
 			{% if school.note %}
@@ -51,21 +51,23 @@
 
 	<h3><u>Experience</u></h3>
 	<!-- newest to oldest or oldest to newest? -->
+	{% for xp in experiences %}
 	<table>
-		{% for xp in experiences %}
+		
 			<tr>
-				<td>{{ xp.company }} - {{ xp.location }}</td>
+				<td><b>{{ xp.company }}</b></td>
 				<td style='text-align:right;'>({{ xp.duration }})</td>
 			</tr>
+			<tr><td>{{ xp.location }}</td></tr>
 			<tr><td><i>{{ xp.role }}<i></td></tr>
 			<tr>
 				<td colspan='2'>
-					<ul><li>{{ xp.description|linebreaks }}</li></ul>
+					{{ xp.description|linebreaks }}
 				</td>
 			</tr>
-		{% endfor %}
+		
 	</table>
-	
+	{% endfor %}
 	
 	<h3><u>Accomplishments</u></h3>
 	<ul>
