@@ -44,7 +44,10 @@ h3, p {
 a {
 	text-decoration: none;
 	color: black;
+}
 
+a:hover {
+	color: black;
 }
 
 #links a:hover {
@@ -79,6 +82,7 @@ table {
 td {
 	max-width: 750px;
 	min-width: 125px;
+	vertical-align: top;
 }
 
 ul {
@@ -110,3 +114,19 @@ ul {
 	color: #F7FBFB;
 	font-family: 'Montserrat', sans-serif;
 }
+
+.project td, th {
+	padding: 3px 15px;
+	line-height: 1;
+}
+
+.project th {
+	font-size: 24px;
+}
+
+.project {
+	margin-top: 20px;
+}
+
+
+
