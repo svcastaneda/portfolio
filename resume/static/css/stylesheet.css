@@ -5,7 +5,8 @@ body {
 	min-width: 875px;
 	max-width: 925px;
 	margin: 0 auto;
-	font-family: 'Muli', sans-serif;
+/*	font-family: 'Muli', sans-serif;*/
+	font-family: Verdana, Geneva, sans-serif;
 }
 
 h3, p {
@@ -28,7 +29,6 @@ h3, p {
 	text-align: center;
 	padding-right: 0px;
 	overflow: auto;
-
 }
 
 #links a {
@@ -112,7 +112,8 @@ ul {
 
 #header h1 {
 	color: #F7FBFB;
-	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+/*	font-family: 'Montserrat', sans-serif;*/
 }
 
 .project td, th {
