@@ -5,7 +5,7 @@ from .models import Accomplishment, Skill, Project, Experience, School, Activity
 # Create your views here.
 
 def home(request):
-    return render(request, 'mysite/blah.html')
+    return render(request, 'mysite/home.html')
 
 def resume(request):
     schools = School.objects.all()
