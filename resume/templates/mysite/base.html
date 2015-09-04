@@ -15,16 +15,19 @@
 <body>
 <div id='body'>
 	<div id='header'>
+		
 		<h1>{% block heading %}{% endblock %}</h1>
 
 		<div id='links'>
 			<a href='/'>About Me</a>
 			<a href="/resume">Resume</a>
 			<a href="/projects">Past Projects</a>
+			<a href="/posts">Blog</a>
 			<a href="/contact">Contact</a>
 			<a href="https://github.com/svcastaneda" target="_blank">GitHub</a>
-			<a href="https://www.linkedin.com/pub/saundra-castaneda/78/b9b/424" target="_blank">LinkedIn</a>
+			<!-- <a href="https://www.linkedin.com/pub/saundra-castaneda/78/b9b/424" target="_blank">LinkedIn</a> -->
 		</div>
+		
 	</div>
 	<div class='text'>
         <div class="row">
@@ -35,6 +38,13 @@
         </div>
     </div>
 
+
 	
-</div>
+	
+</div><div id="profile_buttons">
+		<script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+		<script type="IN/MemberProfile" data-id="https://www.linkedin.com/pub/saundra-castaneda/78/b9b/424" data-format="hover"></script>
+		<a class="github-button" href="https://github.com/svcastaneda" aria-label="Follow @svcastaneda on GitHub">Follow @svcastaneda</a>
+		<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+	</div>
 </body>

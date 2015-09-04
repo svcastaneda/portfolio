@@ -1,10 +1,11 @@
 from django.shortcuts import render
+from .forms import send_email
 from .models import Accomplishment, Skill, Project, Experience, School, Activity
 
 # Create your views here.
 
 def home(request):
-    return render(request, 'mysite/home.html')
+    return render(request, 'mysite/blah.html')
 
 def resume(request):
     schools = School.objects.all()
@@ -21,4 +22,22 @@ def projects(request):
     return render(request, 'mysite/projects.html', {'projects': projects})
     
 def contact(request):
+    
+        
+    
     return render(request, 'mysite/contact.html')
+    
+def sent(request):
+    if request.method=='POST':
+        form = send_email(request.POST)
+        
+        if form.is_valid():
+            sender = form.cleaned_data['name']
+            subject = form.cleaned_data['subject']
+            message = form.cleaned_data['message']
+            from_email = form.cleaned_data['email']
+            return HttpResponseRedirect('/')
+    else:
+        form = send_email()
+    
+    return render(request, 'mysite/projects.html', {'form':form})

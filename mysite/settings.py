@@ -25,6 +25,12 @@ SECRET_KEY = 'x14zm-_^ougi4xz9v7#(-$z--2w!n4m8&n1u-48^#q@x35slp9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+#
+#EMAIL_HOST = 'smtp.sendgrid.net'
+#EMAIL_HOST_USER = ''
+#EMAIL_HOST_PASSWORD = ''
+#EMAIL_PORT = 587
+#EMAIL_USE_TLS = True
 
 ALLOWED_HOSTS = []
 
@@ -38,7 +44,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'resume'
+    'resume',
+    'blog'
 )
 
 MIDDLEWARE_CLASSES = (

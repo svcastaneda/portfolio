@@ -6,5 +6,6 @@ urlpatterns = [
     # name='accomplishment_list'),
     url(r'^projects', views.projects),
     url(r'^resume', views.resume),
-    url(r'^contact', views.contact)
+    url(r'^contact', views.contact),
+    url(r'^sent', views.sent)
 ]

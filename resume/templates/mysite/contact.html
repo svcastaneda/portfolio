@@ -39,7 +39,9 @@
 			<!-- CREATE CUSTOM CONTACT FORM -->
 			
 			<!-- Do not change the code until custom form has been made! -->
-			<a id="foxyform_embed_link_657804" href="http://www.foxyform.com/"></a>
+			
+			
+			<!-- <a id="foxyform_embed_link_657804" href="http://www.foxyform.com/"></a>
 			<script type="text/javascript">
 				(function(d, t){
 				   var g = d.createElement(t),
@@ -47,8 +49,23 @@
 				   g.src = "http://www.foxyform.com/js.php?id=657804&sec_hash=6228c78f215&width=350px";
 				   s.parentNode.insertBefore(g, s);
 				}(document, "script"));
-			</script>
+			</script> -->
+				
+				
+				
 			<!-- Do not change the code until custom form has been made! -->
+			
+			
+			
+			<form action="/contact" method='post'>{% csrf_token %}
+				your name: <input type="text" name="from_email" placeholder="Harry Potter" id="from_email" required><br>
+				subject: <input type="text" name="subject" placeholder="subject" id="subject"><br>
+				email: <input type="email" name="from_email" placeholder="example@example.com" id="from_email" required><br>
+				<textarea name="message" placeholder="message" id="message" rows="10" cols="50" required></textarea><br>
+				
+				<input type="submit" name="send" value="send" id="send">
+			</form>
+			
 	</div>		
 </div>
 </body>
