@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Quick-start development settings - unsuitable for production
@@ -84,21 +82,14 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
      'default': {
-         # 'ENGINE': 'django.db.backends.sqlite3',
-         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-         'NAME': 'd8i4p6ncj3l8ha',
-         'USER': 'yekxizxtizjrfl',
-         'PASSWORD': '26g1N12VPW3TMqXsszr-kJffke',
-         'HOST': 'ec2-54-197-253-142.compute-1.amazonaws.com',
-         'PORT': '5432',
-     }
+         'ENGINE': 'django.db.backends.sqlite3',
+         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
  }
 
 # Parse database configuration from $DATABASE_URL
-# import dj_database_urls
-# DATABASES['default'] = dj_database_url.config()
-# DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
+import dj_database_urls
+DATABASES['default'] = dj_database_url.config()
+DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 
 
 # Internationalization
@@ -139,3 +130,5 @@ STATIC_ROOT = 'staticfiles'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
