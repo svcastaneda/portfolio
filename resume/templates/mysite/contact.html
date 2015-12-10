@@ -1,37 +1,18 @@
-{% load staticfiles %}
+{% extends "mysite/base.html" %}
 
-<!DOCTYPE html>
-<head>
-	<title>Contact</title>
-	
-	<link rel="shortcut icon" href="https://yt3.ggpht.com/-seX31pjzFuk/AAAAAAAAAAI/AAAAAAAAAAA/KW_1RnNexZw/s900-c-k-no/photo.jpg">
-	
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{% static "css/stylesheet.css" %}">
-	
-</head>
+{% block title %}Contact{% endblock %}
+{% block heading %}Contact{% endblock %}
 
-<body>
-<div id='body'>
-	<div id='header'>
-		<h1>Contact</h1>
-		<div id='links'>
-			<a href='/'>About Me</a>
-			<a href="/resume">Resume</a>
-			<a href="/projects">Past Projects</a>
-			<a href="/contact">Contact</a>
-			<a href="https://github.com/svcastaneda" target="_blank">GitHub</a>
-			<a href="https://www.linkedin.com/pub/saundra-castaneda/78/b9b/424" target="_blank">LinkedIn</a>
-		</div>
-	</div>
-	<div class='text' id='contactinfo'>
+{% block content %}
+	<div id='contactinfo'>
 
 			<!-- TRY TO USE MAILJET API -->
 			<!-- CREATE CUSTOM CONTACT FORM -->
 			
 			<!-- Do not change the code until custom form has been made! -->
-			<a id="foxyform_embed_link_657804" href="http://www.foxyform.com/"></a>
+			
+			
+			 <a id="foxyform_embed_link_657804" href="http://www.foxyform.com/"></a>
 			<script type="text/javascript">
 				(function(d, t){
 				   var g = d.createElement(t),
@@ -39,9 +20,24 @@
 				   g.src = "http://www.foxyform.com/js.php?id=657804&sec_hash=6228c78f215&width=350px";
 				   s.parentNode.insertBefore(g, s);
 				}(document, "script"));
-			</script>
+			</script> 
+				
+				
+				
 			<!-- Do not change the code until custom form has been made! -->
 			
-	</div>
-</div>
-</body>
+			
+			
+<!--
+			<form action="/contact" method='post'>{% csrf_token %}
+				your name: <input type="text" name="from_email" placeholder="Harry Potter" id="from_email" required><br>
+				subject: <input type="text" name="subject" placeholder="subject" id="subject"><br>
+				email: <input type="email" name="from_email" placeholder="example@example.com" id="from_email" required><br>
+				<textarea name="message" placeholder="message" id="message" rows="10" cols="50" required></textarea><br>
+				
+				<input type="submit" name="send" value="send" id="send">
+			</form>
+-->
+			
+	</div>		
+{% endblock %}

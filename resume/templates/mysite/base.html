@@ -1,38 +1,32 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <head>
-	<title>{% block title %} Saundra {% endblock %}</title>
-	
-	<link rel="shortcut icon" href="https://yt3.ggpht.com/-seX31pjzFuk/AAAAAAAAAAI/AAAAAAAAAAA/KW_1RnNexZw/s900-c-k-no/photo.jpg">
-	
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{% static "css/stylesheet.css" %}">
-	
+	<title>{% block title %}{% endblock %}</title>
+	<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+	<link rel="stylesheet" href="{% static "css/stylesheet.css" %}" type="text/css" media="screen">
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 </head>
 <body>
-<div id='body'>
-	<div id='header'>
+	<header>
 		<h1>{% block heading %}{% endblock %}</h1>
-
-		<div id='links'>
-			<a href='/'>About Me</a>
-			<a href="/resume">Resume</a>
-			<a href="/projects">Past Projects</a>
-			<a href="/contact">Contact</a>
-			<a href="https://github.com/svcastaneda" target="_blank">GitHub</a>
-			<a href="https://www.linkedin.com/pub/saundra-castaneda/78/b9b/424" target="_blank">LinkedIn</a>
-		</div>
+		<table>
+			<tr>
+				<td><a href="/">Home</a></td>
+				<td><a href="/resume">Resume</a></td>
+				<td><a href="/projects">Projects</a></td>
+				<td><a href="/contact">Contact</a></td>
+			</tr>
+		</table>
+	</header>
+		
 	</div>
-	<div class='text'>
-        <div class="row">
-            <!-- <div class="col-md-8"> -->
-	            {% block content %}
-	            {% endblock %}
-            <!-- </div> -->
-        </div>
-    </div>
-
-	
-</div>
+	<div class='content'>
+    {% block content %}
+    {% endblock %}
+  </div>
+	<div class="socialMediaLinks">
+	  <a href="https://plus.google.com/+SaundraCastaneda/" target="_blank"><img src="{% static 'imgs/google-plus.png' %}" alt="Google Plus" height="26"></a>
+	  <a href="https://github.com/svcastaneda" target="_blank"><img src="{% static 'imgs/GitHub.png' %}" alt="GitHub" height="24px"></a>
+	  <a href="https://www.linkedin.com/in/svcastaneda" target="_blank"><img src="{% static 'imgs/LinkedIn.png' %}" height="24" alt="LinkedIn"></a>
+  </div>
 </body>

@@ -1,0 +1,33 @@
+{% extends "mysite/base.html" %}
+
+{% block title %}Projects{% endblock %}
+{% block heading %}Projects{% endblock %}
+
+{% block content %}
+	<div class='text'>
+		<h3>About Me</h3>
+		<h4>Hi! I'm Saundra Castaneda.</h4>
+		<p>(that's me in the middle)</p><br>
+		<ul>
+			<li>attends at DePaul University</li>
+			<li>studies computer science</li>
+			<li>owns of 3 dogs</li>
+			<li>plays the guitar and ukulele</li>
+			<li>enjoys photography</li>
+			<li>addicted to coffee</li>
+			<li>loves sudoku puzzles</li>
+		</ul>
+	</div>
+	
+	<div id='pictures'>
+		<img src="http://res.cloudinary.com/svcastaneda/image/upload/me.jpg" width="240" alt="Me" style="float:left">
+		
+		<div id='dogs'>
+			<img src="http://res.cloudinary.com/svcastaneda/image/upload/Sammy.jpg" width="115" alt="Sammy">
+			<img src="http://res.cloudinary.com/svcastaneda/image/upload/Dexter.jpg" width="115" alt="Dexter">
+			<img src="http://res.cloudinary.com/svcastaneda/image/upload/Lucy.jpg" width="115" alt="Lucy">
+		</div>
+		
+	</div>
+
+{% endblock %}
