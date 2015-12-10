@@ -5,28 +5,24 @@
 
 {% block content %}
 
-<!-- <div class='text' style="text-align:center;"> -->
-
-
-				
-			{% for project in projects %}
-			<table class="project">
-				<tr>
-					<td rowspan='3'>
-						<img src="{{ project.pic }}" width="250" alt="{{ project.alt }}">
-					</td>
-					<th>
-						<a href="{{ link }}" target="_blank">{{ project.name }}</a>
-					</th>
-				</tr>
-				<tr>
-					<td>
-						<i>role: {{ project.role }}</i>
-					</td>
-				<tr>
-					<td>{{ project.description }}</td>
-				</tr>
-			</table>
-			{% endfor %}
-				
+	{% for project in projects %}
+	<table class="project">
+		<tr>
+			<td rowspan='3'>
+				<img src="{{ project.pic }}" width="250" alt="{{ project.alt }}">
+			</td>
+			<th>
+				<a href="{{ link }}" target="_blank">{{ project.name }}</a>
+			</th>
+		</tr>
+		<tr>
+			<td>
+				<i>role: {{ project.role }}</i>
+			</td>
+		<tr>
+			<td>{{ project.description }}</td>
+		</tr>
+	</table>
+	{% endfor %}
+	
 {% endblock %}

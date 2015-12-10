@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/1.8/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.8/ref/settings/
 """
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
@@ -21,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'x14zm-_^ougi4xz9v7#(-$z--2w!n4m8&n1u-48^#q@x35slp9'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -56,7 +55,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
+    # 'django.middleware.security.SecurityMiddleware',
 )
 
 ROOT_URLCONF = 'mysite.urls'
@@ -87,18 +86,16 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
         # 
 
 DATABASES = {
-     'default': {        
-         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-         'NAME': 'd8i4p6ncj3l8ha',
-         'USER': 'yekxizxtizjrfl',
-         'PASSWORD': '26g1N12VPW3TMqXsszr-kJffke',
-         'HOST': 'ec2-54-197-253-142.compute-1.amazonaws.com',
-         'PORT': '5432',
+     'default': {
+         'ENGINE': 'django.db.backends.sqlite3',
+         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
      }
  }
 
-import dj_database_url
-# DATABASES['default'] =  dj_database_url.config()
+# Parse database configuration from $DATABASE_URL
+import dj_database_urls
+DATABASES['default'] = dj_database_url.config()
+DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 
 
 # Internationalization

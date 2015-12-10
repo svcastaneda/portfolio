@@ -1,16 +1,17 @@
 {% extends "mysite/base.html" %}
+{% load filters %}
 
 {% block title %}Resume{% endblock %}
 {% block heading %}Resume{% endblock %}
 
 {% block content %}
 
-	<h3><u>Education</u></h3>
+	<h3>Education</h3>
 	<table id='education'>
 		{% for school in schools %}
 			<tr>
 				<td><b>{{ school.name }}</b></td>
-				<td style='text-align:right'>{{ school.location }}</td>
+				<td style='text-align:right'>({{ school.duration }})</td>
 			</tr>
 			{% if school.note %}
 			<tr>
@@ -32,7 +33,7 @@
 	</table>
 		
 		
-	<h3><u>Skills</u></h3>
+	<h3>Technical Skills</h3>
 	<table>
 		<tr>
 			<td><ul>
@@ -49,27 +50,29 @@
 	</table>
 
 
-	<h3><u>Experience</u></h3>
+	<h3>Experience</h3>
 	<!-- newest to oldest or oldest to newest? -->
 	{% for xp in experiences %}
 	<table>
 		
 			<tr>
-				<td><b>{{ xp.company }}</b></td>
-				<td style='text-align:right;'>({{ xp.duration }})</td>
+				<th>{{ xp.position }} at {{ xp.company }}</th>
 			</tr>
-			<tr><td>{{ xp.location }}</td></tr>
-			<tr><td><i>{{ xp.role }}<i></td></tr>
+			<tr><td>({{ xp.duration }})</td></tr>
 			<tr>
 				<td colspan='2'>
-					{{ xp.description|linebreaks }}
+					<ul>
+					{% for line in xp.description|split %}
+						<li>{{ line }}</li>
+					{% endfor %}
+					</ul>
 				</td>
 			</tr>
 		
 	</table>
 	{% endfor %}
 	
-	<h3><u>Accomplishments</u></h3>
+	<h3>Accomplishments</h3>
 	<ul>
 		{% for thing in accomplishments %}
 			<li>{{ thing }}</li>
@@ -78,10 +81,10 @@
 	
 	<br>
 	
-	<h3><u>Extra-Curricular Activities</u></h3>
+	<h3>Organizations</h3>
 	<ul>
-		{% for activity in activities %}
-			<li>{{ activity.name }} [{{ activity.duration }}]</li>
+		{% for organization in organizations %}
+			<li>{{ organization.name }} [{{ organization.duration }}]</li>
 		{% endfor %}
 	</ul>
 	

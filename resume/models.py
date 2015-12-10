@@ -7,11 +7,10 @@ class School(models.Model):
     major = models.CharField(max_length=50)
     concentration = models.CharField(max_length=50, blank=True)
     location = models.CharField(max_length=50)
-    graduation = models.CharField(max_length=50)
+    duration = models.CharField(max_length=50)
     gpa = models.DecimalField(max_digits=3, decimal_places=2)
     note = models.TextField(blank=True)
-    created_date = models.DateTimeField(
-                default=timezone.now)
+    level = models.PositiveSmallIntegerField(default=0)
     published_date = models.DateTimeField(
                 blank=True, null=True)
 
@@ -25,6 +24,7 @@ class School(models.Model):
 class Skill(models.Model):
     author = models.ForeignKey('auth.User')
     skill = models.TextField()
+    level = models.PositiveSmallIntegerField(default=0)
     
     def publish(self):
         self.published_date = timezone.now()
@@ -40,8 +40,7 @@ class Experience(models.Model):
     duration = models.CharField(max_length=50)
     position = models.CharField(max_length=50)
     description = models.TextField()
-    created_date = models.DateTimeField(
-                default=timezone.now)
+    level = models.PositiveSmallIntegerField(default=0)
     published_date = models.DateTimeField(
                 blank=True, null=True)
     
@@ -55,8 +54,7 @@ class Experience(models.Model):
 class Accomplishment(models.Model):
     author = models.ForeignKey('auth.User')
     text = models.TextField()
-    created_date = models.DateTimeField(
-                default=timezone.now)
+    level = models.PositiveSmallIntegerField(default=0)
     published_date = models.DateTimeField(
                 blank=True, null=True)
 
@@ -67,12 +65,11 @@ class Accomplishment(models.Model):
     def __str__(self):
         return self.text
         
-class Activity(models.Model):
+class Organization(models.Model):
     author = models.ForeignKey('auth.User')
     name = models.TextField()
     duration = models.CharField(max_length=50)
-    created_date = models.DateTimeField(
-                default=timezone.now)
+    level = models.PositiveSmallIntegerField(default=0)
     published_date = models.DateTimeField(
                 blank=True, null=True)
 
@@ -91,8 +88,7 @@ class Project(models.Model):
     alt = models.CharField(max_length=50)
     pic = models.CharField(max_length=500)
     description = models.TextField()
-    created_date = models.DateTimeField(
-                default=timezone.now)
+    level = models.PositiveSmallIntegerField(default=0)
     published_date = models.DateTimeField(
                 blank=True, null=True)
     

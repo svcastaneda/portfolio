@@ -6,5 +6,5 @@ urlpatterns = [
     url(r'^projects', views.projects),
     url(r'^resume', views.resume),
     url(r'^contact', views.contact),
-    url(r'^sent', views.sent)
+    # url(r'^sent', views.sent)
 ]

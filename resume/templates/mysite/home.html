@@ -1,61 +1,35 @@
+{% extends "mysite/base.html" %}
 {% load staticfiles %}
+{% block title %}Home{% endblock %}
+{% block heading %}Home{% endblock %}
 
-<!DOCTYPE html>
-<head>
-	<title>Home</title>
-	
-	<link rel="shortcut icon" href="https://yt3.ggpht.com/-seX31pjzFuk/AAAAAAAAAAI/AAAAAAAAAAA/KW_1RnNexZw/s900-c-k-no/photo.jpg">
-	
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{% static "css/stylesheet.css" %}">
-	
-	<link href='http://fonts.googleapis.com/css?family=Montserrat:700|Muli' rel='stylesheet' type='text/css'>
-	
-
-	
-</head>
-
-<body>
-<div id='body'>
-	<div id='header'>
-		<h1>Home</h1>
-		<div id='links'>
-			<a href='/'>About Me</a>
-			<a href="/resume">Resume</a>
-			<a href="/projects">Past Projects</a>
-			<a href="/contact">Contact</a>
-			<a href="https://github.com/svcastaneda" target="_blank">GitHub</a>
-			<a href="https://www.linkedin.com/pub/saundra-castaneda/78/b9b/424" target="_blank">LinkedIn</a>
-		</div>
-	</div>
-<div id="content">
-	<div class='text'>
-		<h3>About Me</h3>
-		<h4>Hi! I'm Saundra Castaneda.</h4>
-		<p>(that's me in the middle)</p><br>
-		<ul>
-			<li>attends at DePaul University</li>
-			<li>studies computer science</li>
-			<li>owns of 3 dogs</li>
-			<li>plays the guitar and ukulele</li>
-			<li>enjoys photography</li>
-			<li>addicted to coffee</li>
-			<li>loves sudoku puzzles</li>
-		</ul>
-	</div>
-	
-	<div id='pictures'>
-		<img src="http://res.cloudinary.com/svcastaneda/image/upload/me.jpg" width="240" alt="Me" style="float:left">
-		
-		<div id='dogs'>
-			<img src="http://res.cloudinary.com/svcastaneda/image/upload/Sammy.jpg" width="115" alt="Sammy">
-			<img src="http://res.cloudinary.com/svcastaneda/image/upload/Dexter.jpg" width="115" alt="Dexter">
-			<img src="http://res.cloudinary.com/svcastaneda/image/upload/Lucy.jpg" width="115" alt="Lucy">
-		</div>
-		
-	</div>
-</div>
-	
-</div>
-</body>
+{% block content %}
+	<img src="{% static 'imgs/scastaneda.jpg' %}" height="40%" alt="Scastaneda" class="picture">
+	<p>Hey everyone!</p>
+	<ul>
+		<li>Name: Saundra</li>
+		<li>Nicknames:</li>
+			<ul class="metaList">
+				<li>Ders/Derz</li>
+				<li>Saunders</li>
+				<li>Saundoritos</li>
+			</ul>
+		<li>Hometown: Chicago, IL</li>
+		<li>Interests/hobbies:</li>
+			<ul class="metaList">
+				<li>photography</li>
+				<li>baking</li>
+				<li>concerts</li>
+			</ul>
+		<li>Educational XP: studying CS at DePaul</li>
+		<li>Favorite bands:</li>
+			<ul class="metaList">
+				<li>La Dispute</li>
+				<li>The Maine</li>
+				<li>twenty one pilots</li>
+				<li>The Fratellis</li>
+				<li>The Front Bottoms</li>
+			</ul>
+		<li>Quirk: I love to bake, but I don't like baked goods (or sweets in general).</li>
+	</ul>
+{% endblock %}
